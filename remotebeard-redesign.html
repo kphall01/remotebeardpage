@@ -292,22 +292,24 @@ section { padding: 100px 24px; }
 .service-link:hover { gap: 10px; }
 
 /* ===== WHY CHOOSE US ===== */
-.why-us-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+.why-us-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+.why-us-features {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
 }
-.why-us-features { display: flex; flex-direction: column; gap: 24px; }
 .feature-item {
-  display: flex; gap: 16px; padding: 24px;
-  border-radius: var(--radius); transition: all 0.2s;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 16px; padding: 32px 24px;
+  border-radius: var(--radius-lg); transition: all 0.2s;
+  background: var(--gray-50); border: 1px solid var(--gray-100);
 }
-.feature-item:hover { background: var(--gray-50); }
+.feature-item:hover { background: var(--white); box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .feature-icon {
-  flex-shrink: 0; width: 44px; height: 44px;
-  border-radius: 10px; background: var(--sky-subtle);
+  flex-shrink: 0; width: 52px; height: 52px;
+  border-radius: 14px; background: var(--sky-subtle);
   color: var(--sky); display: flex; align-items: center;
   justify-content: center;
 }
-.feature-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.feature-item h4 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
 .feature-item p { font-size: 14px; color: var(--slate); line-height: 1.6; }
 
 .stats-card-fox {
@@ -501,7 +503,7 @@ footer {
   .hero-fox-icon { width: 160px; height: 160px; }
   .hero-stat-grid { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-  .why-us-grid { grid-template-columns: 1fr; }
+  .why-us-features { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .process-steps { grid-template-columns: 1fr 1fr; }
   .process-step::after { display: none; }
   .contact-grid { grid-template-columns: 1fr; }
@@ -707,76 +709,47 @@ footer {
 <!-- WHY CHOOSE US -->
 <section id="why-us">
   <div class="section-inner">
-    <div class="why-us-grid">
-      <div>
-        <div class="section-label">
-          <svg class="label-fox" viewBox="0 0 100 100" style="color: var(--sky);"><use href="#fox-filled"/></svg>
-          Why RemoteBeard
+    <div class="why-us-header">
+      <div class="section-label" style="justify-content:center;">
+        <svg class="label-fox" viewBox="0 0 100 100" style="color: var(--sky);"><use href="#fox-filled"/></svg>
+        Why RemoteBeard
+      </div>
+      <h2 class="section-title">Built on experience.<br>Driven by outcomes.</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">We combine deep technical expertise with a consultative approach that puts your business goals first.</p>
+    </div>
+    <div class="why-us-features">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
         </div>
-        <h2 class="section-title" style="margin-bottom: 24px;">Built on experience.<br>Driven by outcomes.</h2>
-        <p class="section-subtitle" style="margin-bottom: 40px;">We combine deep technical expertise with a consultative approach that puts your business goals first.</p>
-        <div class="why-us-features">
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-            </div>
-            <div>
-              <h4>Proven Track Record</h4>
-              <p>Years of hands-on experience delivering operational programs for organizations across industries.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div>
-              <h4>Dedicated Partnership</h4>
-              <p>We embed with your team and work as an extension of your organization — not a distant vendor.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-            </div>
-            <div>
-              <h4>Results-First Mindset</h4>
-              <p>Every recommendation we make is grounded in measurable outcomes and your business priorities.</p>
-            </div>
-          </div>
+        <div>
+          <h4>Proven Track Record</h4>
+          <p>Years of hands-on experience delivering operational programs for organizations across industries.</p>
         </div>
       </div>
-      <div class="stats-card">
-        <!-- Fox watermark inside dark stats card -->
-        <svg class="stats-card-fox" viewBox="0 0 100 100" style="color: var(--sky-light);">
-          <use href="#fox-geo"/>
-        </svg>
-        <div class="stats-card-grid">
-          <div class="stat-item">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">Projects Delivered</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">98%</span>
-            <span class="stat-label">Client Retention</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Years Experience</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">24/7</span>
-            <span class="stat-label">Ongoing Support</span>
-          </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <div class="stats-card-divider"></div>
-        <p class="stats-card-quote">
-          <strong>"RemoteBeard transformed our operations and delivered our organizational restructuring 3 months ahead of schedule."</strong><br><br>
-          — COO, Mid-Market Growth Company
-        </p>
+        <div>
+          <h4>Dedicated Partnership</h4>
+          <p>We embed with your team and work as an extension of your organization — not a distant vendor.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+        </div>
+        <div>
+          <h4>Results-First Mindset</h4>
+          <p>Every recommendation we make is grounded in measurable outcomes and your business priorities.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<div style="max-width:1200px; margin:0 auto; padding:0 24px;"><hr style="border:none; border-top:1px solid var(--gray-200); margin:0;"></div>
 
 <!-- PROCESS -->
 <section class="process" id="process">
@@ -948,7 +921,6 @@ footer {
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="#">LinkedIn</a>
-        <a href="#">Twitter / X</a>
         <a href="mailto:contact@remotebeard.com">Email</a>
       </div>
     </div>
